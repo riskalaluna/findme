@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.2.0/united/bootstrap.min.css" />
+  <title>Our Bank</title>
+  <style>
+    .form-signin {
+      width: 100%;
+      max-width: 420px;
+      padding: 15px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      if (username === "test" && password === "test!") {
+        window.location.href = "ini.html";
+      } else {
+        alert("Username atau password salah!");
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="text-center">
+    <h1>Help us test this form</h1>
+    <h1>username: test and password: test.</h1>
+  </div>
+  <form class="form-signin" onsubmit="login(event)">
+    <div class="text-center mb-4">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="username" class="form-control" required autofocus />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" class="form-control" placeholder="Password" required />
+      <br>
+      <input type="submit" id="loginForm" class="btn btn-success" value="Masuk" />
+    </div>
+  </form>
+</body>
+</html>

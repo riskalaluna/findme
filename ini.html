@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="../public/css/tacit-css.min.css"/>
+  <title>Our Bank</title>
+  <style>
+    body {
+      background-color: linen;
+      padding-top: 0px;
+    }
+    .thin {
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+    #search-form {
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  </style>
+  <script>
+    function search(event) {
+      event.preventDefault();
+      const searchTerm = document.getElementById("keyword").value.toLowerCase();
+
+      // Base64 encoded flag
+      const encodedFlag = "VEk0MDR7azF0YV9iM3JfdGk5NH0=";
+
+      // Redirect to login page with flag in URL if search term is "flag"
+      if (searchTerm === "flag") {
+        window.location.href = "http://127.0.0.1:5500/ini.html?flag=" + encodedFlag;
+      }
+    }
+  </script>
+</head>
+<body>
+  <section id="search-section">
+    <h1 style="margin-top:5px">Welcome fellow Human</h1>
+    <hr class="thin">
+    <form id="search-form" onsubmit="search(event)">
+      <input id="keyword" type="text" class="thin" placeholder="Cari flag">
+      <button type="submit" class="thin">Cari</button>
+    </form>
+    <hr>
+  </section>
+
+  <section>
+    <p>I was redirected here by a friend of mine but I couldn't find anything. Help me search for flags :-)</p>
+  </section>
+</body>
+</html>
